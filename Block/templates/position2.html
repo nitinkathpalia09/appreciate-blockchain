@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html>
+
+ <head>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>Appreciate</title>
+		<link rel='icon' href='favicon.ico' type='image/x-icon' />
+    <script type="text/javascript" src="js/mainController.js"></script>
+    
+  <style>
+       /*Navbar style*/
+.navbar-custom{
+	background-color: #011f4b;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #382468;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/
+
+/*Cover Image*/
+.cover-image{
+	background: url(../image/image-1.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    cursor: pointer;
+}
+.cover-image:hove{
+	background: url(../image/image-2.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+.cover-image>h1{
+	color: 	#011f4b;
+	font-weight: bold;
+	cursor: pointer;
+}
+.cover-image>h1:hover{
+	font-size: 50px;
+}
+.cover-image>p{
+	color: #03396c;
+	font-size: 30px;
+}
+/*Cover Image*/
+
+/*Grid*/
+.about-me{
+	background: url(../image/image-3.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.about-me:hover{
+	background: url(../image/image-4.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.about-me>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.about-me>h3:hover{
+	font-weight: bold;
+}
+
+.projects{
+	background: url(../image/image-5.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.projects:hover{
+	background: url(../image/image-6.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.projects>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.projects>h3:hover{
+	font-weight: bold;
+}
+
+.blog{
+	background: url(../image/image-7.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.blog:hover{
+	background: url(../image/image-8.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.blog>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.blog>h3:hover{
+	font-weight: bold;
+}
+
+.contact-me{
+	background: url(../image/image-9.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.contact-me:hover{
+	background: url(../image/image-10.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.contact-me>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.contact-me>h3:hover{
+	font-weight: bold;
+}
+/*Grid*/
+        a.button {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background:rgb(66, 184, 221);
+        }
+		    .box{
+	  height: 300px;
+	  width : 40%;
+	  background-color:#d1d4d6;
+	  border:2px solid #3c4c54 ;
+	  border-radius:10px;
+	  }
+        a.button {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background:rgb(66, 184, 221);
+        }
+		 .TextBox{
+   padding: 0;
+      height: 40px;
+      width: 350px;
+  	border-radius: 5px;
+      position: relative;
+      left: 0;
+      outline: none;
+      border: 1px solid #cdcdcd;
+      border-color: rgba(0,0,0,.15);
+      background-color: #34495E;
+      font-size: 20px;
+  	color: #cdcdcd;
+  	}
+	 .text {
+	font-size:20px;
+    color: black;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    font-family:Comic Sans MS;
+  }
+ .button2 {
+	position: relative;
+	display: block;
+	background:		#3d3c3c;
+	background-size: cover;
+	border: 2px solid #2e2e2e;
+
+	letter-spacing: .1rem;
+	padding: 15px 15px;
+	text-align: center;
+	width: 240px;
+  height: 45px;
+	cursor: pointer;
+	overflow: hidden;
+  border-radius: 5%;
+
+}
+.footer{
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+	height:40px;
+    width: 33.3%;
+    background-color:#34495E ;
+    color:  #cdcdcd;
+	padding: 10px;
+    text-align: center;
+}
+.footer:hover{
+	backgroud-color:#445f7a;
+	}
+.footer2{
+	  position: fixed;
+    left: 33%;
+    bottom: 0%;
+    width: 33.3%;
+	height:40px;
+    background-color:#34495E ;
+    padding: 10px;
+	font-color:  #cdcdcd;
+    text-align: center;
+	color: #cdcdcd;
+}
+.footer3{
+	  position: fixed;
+    left: 66%;
+    bottom: 0%;
+    width: 33.6%;
+	height:40px;
+    background-color:#34495E ;
+    padding: 10px;
+	color: rgb(205,205,205);
+    text-align: center;
+}
+a:active{
+color: white;
+}
+
+a:link{
+color: white;
+}
+   
+        a.button {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background:rgb(66, 184, 221);
+        }
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-custom navbar-expand-md fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" onclick="home()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="aboutMe()">Transactions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="projects()">Counter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="blog()">Position</a>
+          </li> 
+          
+          
+        </ul>
+      </div> 
+    </nav>
+	<br>
+	<br>
+	<br>
+	 <div class="jumbotron cover-images">
+      <br/>
+      <br/>
+      <h1 onclick="aboutMe()">Leaderboard</h1>      
+      <p>See who has the most Appreciate points.</p>
+    </div>
+<center>
+<table id="customers">
+  {% for key, value in result.items() %}
+         
+            <tr>
+               <th> {{ key }} </th>
+               <td>{{value}}</td>
+            </tr>
+			
+            
+         {% endfor %}
+</table>
+</center>
+</body>
+</html>

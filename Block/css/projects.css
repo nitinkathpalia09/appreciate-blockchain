@@ -1,0 +1,42 @@
+/*Navbar style*/
+.navbar-custom{
+	background-color: #ffc844;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #FFBB1E;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/
+.carousel-item>img {
+    width: 800px;
+    height: 400px;
+    cursor: pointer;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}
+.jumbotron{
+  background-color: #FFE589;
+}
+.jumbotron>h3{
+  text-align: center;
+  font-size: 1.25rem;
+}

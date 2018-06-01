@@ -1,0 +1,62 @@
+/*Navbar style*/
+.navbar-custom{
+	background-color: #8d5524;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #8d5524;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/
+
+/*Grid*/
+.contact-heading{
+	margin-top: 20%;
+	margin-left: 2%;
+	cursor: pointer;
+}
+/*Grid*/
+
+.email{
+	background: url(../image/image-13.jpg) center;
+	background-repeat: no-repeat;
+    background-size: 50%;
+    min-height: 300px;
+}
+.email:hover{
+	background: url(../image/image-14.jpg) center;
+	background-repeat: no-repeat;
+    background-size: 50%;
+    min-height: 300px;
+}
+
+#bell{
+	height: 15%;
+	width: 15%;
+	position: relative;
+	display: none;
+	left: 67%;
+	margin-top: 6%;
+}
+
+#github{
+	position: absolute;
+	cursor: pointer;
+	height: 50px;
+    margin-top: 20%;
+    margin-left: 75%;
+}
+
+#linkedin{
+	height: 182px;
+    margin-top: 13%;
+}

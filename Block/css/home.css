@@ -1,0 +1,133 @@
+/*Navbar style*/
+.navbar-custom{
+	background-color: #011f4b;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #382468;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/
+
+/*Cover Image*/
+.cover-image{
+	background: url(../image/image-1.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    cursor: pointer;
+}
+.cover-image:hove{
+	background: url(../image/image-2.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+.cover-image>h1{
+	color: 	#011f4b;
+	font-weight: bold;
+	cursor: pointer;
+}
+.cover-image>h1:hover{
+	font-size: 50px;
+}
+.cover-image>p{
+	color: #03396c;
+	font-size: 30px;
+}
+/*Cover Image*/
+
+/*Grid*/
+.about-me{
+	background: url(../image/image-3.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.about-me:hover{
+	background: url(../image/image-4.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.about-me>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.about-me>h3:hover{
+	font-weight: bold;
+}
+
+.projects{
+	background: url(../image/image-5.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.projects:hover{
+	background: url(../image/image-6.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.projects>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.projects>h3:hover{
+	font-weight: bold;
+}
+
+.blog{
+	background: url(../image/image-7.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.blog:hover{
+	background: url(../image/image-8.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.blog>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.blog>h3:hover{
+	font-weight: bold;
+}
+
+.contact-me{
+	background: url(../image/image-9.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    cursor: pointer;
+}
+.contact-me:hover{
+	background: url(../image/image-10.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+.contact-me>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.contact-me>h3:hover{
+	font-weight: bold;
+}
+/*Grid*/

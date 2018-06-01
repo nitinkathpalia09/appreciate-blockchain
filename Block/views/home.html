@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <title>Appreciate</title>
+		<link rel='icon' href='../image/favicon.ico' type='image/x-icon' />
+    <script type="text/javascript" src="../js/mainController.js"></script>
+    <style>
+      .box{
+	  height: 300px;
+	  width : 40%;
+	  background-color:#d1d4d6;
+	  border:2px solid #3c4c54 ;
+	  border-radius:10px;
+	  }
+        a.button {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background:rgb(66, 184, 221);
+        }
+		 .TextBox{
+   padding: 0;
+      height: 40px;
+      width: 350px;
+  	border-radius: 5px;
+      position: relative;
+      left: 0;
+      outline: none;
+      border: 1px solid #cdcdcd;
+      border-color: rgba(0,0,0,.15);
+      background-color: #34495E;
+      font-size: 20px;
+  	color: #cdcdcd;
+  	}
+	 .text {
+	font-size:20px;
+    color: black;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    font-family:Comic Sans MS;
+  }
+ .button2 {
+	position: relative;
+	display: block;
+	background:		#3d3c3c;
+	background-size: cover;
+	border: 2px solid #2e2e2e;
+	text-transform: uppercase;
+	letter-spacing: .3rem;
+	padding: 20px 15px;
+	text-align: center;
+	width: 140px;
+  height: 15px;
+	cursor: pointer;
+	overflow: hidden;
+  border-radius: 5%;
+
+}
+.footer{
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+	height:40px;
+    width: 33.3%;
+    background-color:#34495E ;
+    color:  #cdcdcd;
+	padding: 10px;
+    text-align: center;
+}
+.footer:hover{
+	backgroud-color:#445f7a;
+	}
+.footer2{
+	  position: fixed;
+    left: 33%;
+    bottom: 0%;
+    width: 33.3%;
+	height:40px;
+    background-color:#34495E ;
+    padding: 10px;
+	font-color:  #cdcdcd;
+    text-align: center;
+	color: #cdcdcd;
+}
+.footer3{
+	  position: fixed;
+    left: 66%;
+    bottom: 0%;
+    width: 33.6%;
+	height:40px;
+    background-color:#34495E ;
+    padding: 10px;
+	color: rgb(205,205,205);
+    text-align: center;
+}
+a:active{
+color: white;
+}
+
+a:link{
+color: white;
+}
+          </style>
+  </head>
+
+  <body bgcolor="#dcdcdc">
+    <nav class="navbar navbar-custom navbar-expand-md fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" onclick="home()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="aboutMe()">Transactions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="projects()">Counter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="blog()">Position</a>
+          </li> 
+          
+          
+        </ul>
+      </div> 
+    </nav>
+
+    <div class="jumbotron cover-image">
+      <br/>
+      <br/>
+      <h1 onclick="aboutMe()">Appreciate</h1>      
+      <p>Acknowledge the contributions from your colleagues</p>
+    </div>
+	<div>
+      <center>
+	  <div class="box">
+        <form action = "http://localhost:5000/transactions" method = "post">
+            <p align="center" style="color:black;font-size: 20px;font-weight: normal;">
+			<p class="text">Enter recipient:</p>
+    <input style="margin-left:1em;" type="text" class="TextBox" placeholder="Recipient" name="recipient" id="fname" pattern="[A-Za-z]{1,20}" required/><br><br>
+<p class="text">Enter URL:</p>
+	
+     <input style="margin-left:1em;" type="text" class="TextBox" placeholder="URL" name="url" id="url" required/><br>
+    
+    </p><br>
+		 
+          <p><input type = "submit" class="button2" value = "submit" /></p>
+       </form>
+	   <br>
+	   <br>
+	   <br>
+	   </center>
+	   </div>
+	   <div>
+	   <a href="https://vision.appreciatehub.com/ui/greatwork/index.html?locale=en_US&showCookieMsg=false"  >
+       <div class="footer">
+         
+             Go to Appreciate System
+			 </div></a>
+			  <a href="http://localhost:5000/counter"  >
+		<div class="footer2">
+            Know my points
+        </div>
+		</a>
+		 <a href="http://localhost:5000/position"  >
+         <div class="footer3">
+             
+            Know my position
+		</div>
+		</a>
+  </body>
+</html>
+
+   
