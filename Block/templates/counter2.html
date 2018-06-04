@@ -274,8 +274,8 @@ color: white;
     <div class="jumbotron cover-images">
       <br/>
       <br/>
-      <h1 onclick="aboutMe()">Appreciate</h1>      
-      <p>Acknowledge the contributions from your colleagues</p>
+      <h1 onclick="aboutMe()">Appreciate Count</h1>      
+      <p>See the number of appreciates you've sent</p>
     </div>
       <center>
         
@@ -284,12 +284,11 @@ color: white;
          
             <tr>
                <th> {{ key }} </th>
-               <td> {{ value }} </td>
+               <td > {{ value }} </td>
             </tr>
             
          {% endfor %}
       </table>
-      
              <br>
              
              <a href="http://localhost:5000/position" >

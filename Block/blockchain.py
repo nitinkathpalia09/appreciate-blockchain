@@ -5,7 +5,8 @@ from urllib.parse import urlparse
 from uuid import uuid4
 import socket
 import operator
-
+from bs4 import BeautifulSoup
+import itertools
 import requests
 from flask import Flask, jsonify, request, redirect, url_for,render_template
 
@@ -116,30 +117,38 @@ class Blockchain:
     
     def position(self):
         neighbour=self.nodes
-        points_other=[]
+        list=[]
+        nodes_other=[]
         points_final=[]
         #nodes_list=[]
         #my_dict={}
         points_self=self.points
         for node in neighbour:
-            response= requests.get(f'http://{node}/counter')
-                
-
-            if response.status_code==200:
-                points_other=response.json()['points']
+            response= requests.get(f'http://{node}/counter').text
+            soup=BeautifulSoup(response,'html.parser')
+            abc=soup.find_all('td')
+            for link in abc:
+                values=link.contents[0]
+                list.append(values)
+            points_final.append(int(list[1]))
+            nodes_other.append(list[2])
+                #dcf=list[1]
+            #nodes_other.append(dcf)
             
 
-                points_final.append(points_other)
                 #nodes_list.append(node)
                 #my_dict.update({'node':points_final[node]})
 
         points_final.append(points_self) 
+        nodes_other.append(socket.gethostname())
+        Z = [x for _,x in sorted(zip(points_final,nodes_other),reverse=True)]
+        Y=sorted(points_final,reverse=True)
         #for node in neighbour:
          #   self.dict.update({'node':points_final[node]})       
         #sorted_dict=sorted(self.dict.items(),key=operator.itemgetter(1))
                 
         #return sorted_dict
-        return sorted(points_final)
+        return Y,Z
     def transactions(self, sender, recipient,address):
            
         self.current_transactions.append({
@@ -214,7 +223,7 @@ def mine():
     # Forge the new Block by adding it to the chain
     previous_hash = blockchain.hash(last_block)
     block = blockchain.new_block(proof, previous_hash)
-    
+
     response = {
         'message': "New Block Forged",
         'index': block['index'],
@@ -248,7 +257,7 @@ def transactions():
         return redirect(url_for('success',name=index))
    
     
-   
+
     else:
         recipient=request.args.get('recipient')
         address=request.args.get('url')
@@ -307,11 +316,11 @@ def consensus():
     return jsonify(response), 200
 @app.route('/position',methods=['GET'])
 def position():
-    position=blockchain.position()
+    points,nodes=blockchain.position()
     
     response={
-        'positions': position,
-        'nodes': socket.gethostname()
+        'points': points,
+        'nodes': nodes
         
     }
     return render_template('position2.html', result=response)
@@ -325,4 +334,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     port = args.port
 
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=5001)
