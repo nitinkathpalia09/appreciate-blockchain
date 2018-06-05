@@ -244,6 +244,24 @@ a:link{
 color: white;
 }
           </style>
+		  <script>
+		  function home(){
+	window.location.href = "C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\home.html";
+	return false;
+}
+function aboutMe(){
+	window.location.href = "C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\register.html";
+	return false;
+}
+function projects(){
+	window.location.href = "http://DESKTOP-U7ESS73:5000/counter";
+	return false;
+}
+function blog(){
+	window.location.href = "http://DESKTOP-U7ESS73:5000/position";
+	return false;
+}
+</script>
   </head>
 
   <body>
@@ -254,16 +272,16 @@ color: white;
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" onclick="home()">Home</a>
+            <a class="nav-link" href="C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\home.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="aboutMe()">Transactions</a>
+            <a class="nav-link" href="C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\register.html">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="projects()">Counter</a>
+            <a class="nav-link" href="http://DESKTOP-U7ESS73:5000/counter">Counter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="blog()">Position</a>
+            <a class="nav-link" href="http://DESKTOP-U7ESS73:5000/position" >Position</a>
           </li> 
           
           
@@ -275,7 +293,7 @@ color: white;
       <br/>
       <br/>
       <h1 onclick="aboutMe()">Appreciate Count</h1>      
-      <p>See the number of appreciates you've sent</p>
+      <p>The number of appreciates you've sent</p>
     </div>
       <center>
         
@@ -291,7 +309,7 @@ color: white;
       </table>
              <br>
              
-             <a href="http://localhost:5000/position" >
+             <a href="http://DESKTOP-U7ESS73:5000/position" >
 			 <div class="button2">Know my position
 			 </div>
 			 </a>

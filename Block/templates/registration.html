@@ -1,16 +1,13 @@
-
-<!DOCTYPE html>
-<html>
-
- <head>    
+<!doctype html>
+<html lang="en">
+  <head>    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <title>Appreciate</title>
 		<link rel='icon' href='../image/favicon.ico' type='image/x-icon' />
-    <script type="text/javascript" src="js/mainController.js"></script>
-    
-  <style>
-       /*Navbar style*/
+    <script type="text/javascript" src="../js/mainController.js"></script>
+    <style>
+      /*Navbar style*/
 .navbar-custom{
 	background-color: #011f4b;
 }
@@ -246,54 +243,7 @@ color: white;
 a:link{
 color: white;
 }
-   
-        a.button {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            background:rgb(66, 184, 221);
-        }
-#customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-}
-</style>
-<script>
-function home(){
-	window.location.href = "C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\home.html";
-	return false;
-}
-function aboutMe(){
-	window.location.href = "C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\register.html";
-	return false;
-}
-function projects(){
-	window.location.href = "http://DESKTOP-U7ESS73:5000/counter";
-	return false;
-}
-function blog(){
-	window.location.href = "http://DESKTOP-U7ESS73:5000/position";
-	return false;
-}
-</script>
+          </style>
   </head>
 
   <body>
@@ -304,49 +254,50 @@ function blog(){
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\home.html">Home</a>
+            <a class="nav-link" onclick="home()">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="C:\Users\Nitin\AppData\Local\Programs\Python\Python36-32\Block\views\register.html">Register</a>
+            <a class="nav-link" onclick="aboutMe()">Transactions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://DESKTOP-U7ESS73:5000/counter">Counter</a>
+            <a class="nav-link" onclick="projects()">Counter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://DESKTOP-U7ESS73:5000/position" >Position</a>
+            <a class="nav-link" onclick="blog()">Position</a>
           </li> 
           
           
         </ul>
       </div> 
     </nav>
-	<br>
-	<br>
-	<br>
-	 <div class="jumbotron cover-images">
+
+    <div class="jumbotron cover-images">
       <br/>
       <br/>
-      <h1 onclick="aboutMe()">Leaderboard</h1>      
-      <p>Who has the most Appreciate points.</p>
+      <h1 onclick="aboutMe()">Appreciate Count</h1>      
+      <p>The number of appreciates you've sent</p>
     </div>
-<center>
-<table id="customers">
-  {% for key, value in result.items() %}
+      <center>
+        
+      <table id ="customers" >
+         {% for key, value in result.items() %}
          
             <tr>
                <th> {{ key }} </th>
-               <td>{{value}}</td>
+               <td > {{ value }} </td>
             </tr>
-			
             
          {% endfor %}
-</table>
-<br>
- <a href="http://DESKTOP-U7ESS73:5000/home" >
-			 <div class="button2">Send a new Appreciate
+      </table>
+             <br>
+             
+             <a href="http://DESKTOP-U7ESS73:5000/counter" >
+			 <div class="button2">Know My Points
 			 </div>
 			 </a>
-
-</center>
-</body>
+      </center>
+	  <br>
+	  <br>
+	  
+  </body>
 </html>

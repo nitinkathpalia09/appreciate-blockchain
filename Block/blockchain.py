@@ -160,7 +160,8 @@ class Blockchain:
         })
     
         return self.last_block['index'] + 1
-        
+    def appreciates(self):
+        return self.current_transactions    
     
     @property
     def last_block(self):
@@ -194,7 +195,7 @@ class Blockchain:
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
     
-
+    
 # Instantiate the Node
 app = Flask(__name__)
 
@@ -243,9 +244,16 @@ def counter():
     return render_template('counter2.html', result=response)
    
     #return jsonify(response), 200
+@app.route('/gethostname')
+def gethostname():
+    response={
+        'Name':socket.gethostname()
+    }
+    return render_template('gethostname.html',result=response)    
 @app.route('/success/<name>')
 def success(name):
     return 'successfully appreciated the employee for the month  %s' %name
+
 @app.route('/transactions', methods=['POST','GET'])
 def transactions():
     if request.method=='POST':
@@ -282,20 +290,21 @@ def full_chain():
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodes():
-    values = request.get_json()
+    if request.method=='POST':
+        values = request.form['nodes']
 
-    nodes = values.get('nodes')
-    if nodes is None:
-        return "Error: Please supply a valid list of nodes", 400
+        nodes=values.split(",")
+        if nodes is None:
+            return "Error: Please supply a valid list of nodes", 400
 
-    for node in nodes:
-        blockchain.register_node(node)
+        for node in nodes:
+            blockchain.register_node(node)
 
-    response = {
-        'message': 'New nodes have been added',
-        'total_nodes': list(blockchain.nodes),
-    }
-    return jsonify(response), 201
+        response = {
+            'message': 'New nodes have been added',
+            'total_nodes': list(blockchain.nodes),
+        }
+    return render_template('registration.html',result=response)
 
 
 @app.route('/nodes/resolve', methods=['GET'])
@@ -316,6 +325,7 @@ def consensus():
     return jsonify(response), 200
 @app.route('/position',methods=['GET'])
 def position():
+
     points,nodes=blockchain.position()
     
     response={
@@ -324,8 +334,18 @@ def position():
         
     }
     return render_template('position2.html', result=response)
+@app.route('/appreciates',methods=['POST','GET'])
+def appreciates():
+    transactions=blockchain.appreciates()
+    response={
+        'Appreciates':transactions
+    }
+   
+    return render_template('appreciates.html',result=response)
+@app.route('/home',methods=['GET','POST'])
+def home():
+    return render_template('home.html')
     
-
 if __name__ == '__main__':
     from argparse import ArgumentParser
 
@@ -334,4 +354,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     port = args.port
 
-    app.run(host='127.0.0.1', port=5001)
+    app.run(host='DESKTOP-U7ESS73', port=5001)

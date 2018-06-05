@@ -1,16 +1,20 @@
 function home(){
-	window.location.href = "../views/home.html";
+	window.location.href = "http://DESKTOP-U7ESS73:5000/home";
 	return false;
 }
 function aboutMe(){
-	window.location.href = "../views/home.html";
+	window.location.href = "../views/register.html";
 	return false;
 }
 function projects(){
-	window.location.href = "http://localhost:5000/counter";
+	window.location.href = "http://DESKTOP-U7ESS73:5000/counter";
 	return false;
 }
 function blog(){
-	window.location.href = "http://localhost:5000/position";
+	window.location.href = "http://DESKTOP-U7ESS73:5000/position";
+	return false;
+}
+function gethostname(){
+	window.location.href="http://DESKTOP-U7ESS73:5000/gethostname";
 	return false;
 }
