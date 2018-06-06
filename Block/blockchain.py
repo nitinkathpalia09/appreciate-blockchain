@@ -116,16 +116,17 @@ class Blockchain:
         
     
     def position(self):
-        neighbour=self.nodes
+        #neighbours=self.nodes
         list=[]
         nodes_other=[]
         points_final=[]
         #nodes_list=[]
         #my_dict={}
         points_self=self.points
-        for node in neighbour:
-            response= requests.get(f'http://{node}/counter').text
-            soup=BeautifulSoup(response,'html.parser')
+        for i in self.nodes:
+            response= requests.get(f'http://{i}/counter')
+            text=response.text
+            soup=BeautifulSoup(text)
             abc=soup.find_all('td')
             for link in abc:
                 values=link.contents[0]
@@ -134,7 +135,7 @@ class Blockchain:
             nodes_other.append(list[2])
                 #dcf=list[1]
             #nodes_other.append(dcf)
-            
+            list=[]
 
                 #nodes_list.append(node)
                 #my_dict.update({'node':points_final[node]})
@@ -250,9 +251,9 @@ def gethostname():
         'Name':socket.gethostname()
     }
     return render_template('gethostname.html',result=response)    
-@app.route('/success/<name>')
-def success(name):
-    return 'successfully appreciated the employee for the month  %s' %name
+#@app.route('/success/<name>')
+#def success(name):
+  #return 'successfully appreciated the employee for the month  %s' %name
 
 @app.route('/transactions', methods=['POST','GET'])
 def transactions():
@@ -262,7 +263,7 @@ def transactions():
         
     
         index = blockchain.transactions(socket.gethostname(), recipient,address)
-        return redirect(url_for('success',name=index))
+        return redirect(url_for('counter',name=index))
    
     
 
@@ -272,7 +273,7 @@ def transactions():
        
         index = blockchain.transactions(socket.gethostname(),recipient,address)
         
-        return redirect(url_for('success',name=index))
+        return redirect(url_for('counter',name=index))
 
 
 
@@ -290,7 +291,7 @@ def full_chain():
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodes():
-    if request.method=='POST':
+    
         values = request.form['nodes']
 
         nodes=values.split(",")
@@ -302,9 +303,9 @@ def register_nodes():
 
         response = {
             'message': 'New nodes have been added',
-            'total_nodes': list(blockchain.nodes),
+            'total_nodes': list(blockchain.nodes)
         }
-    return render_template('registration.html',result=response)
+        return render_template('registration.html',result=response)
 
 
 @app.route('/nodes/resolve', methods=['GET'])
@@ -321,7 +322,6 @@ def consensus():
             'message': 'Our chain is authoritative',
             'chain': blockchain.chain
         }
-
     return jsonify(response), 200
 @app.route('/position',methods=['GET'])
 def position():
@@ -345,7 +345,7 @@ def appreciates():
 @app.route('/home',methods=['GET','POST'])
 def home():
     return render_template('home.html')
-    
+
 if __name__ == '__main__':
     from argparse import ArgumentParser
 
@@ -354,4 +354,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     port = args.port
 
-    app.run(host='DESKTOP-U7ESS73', port=5001)
+    app.run(host='DESKTOP-U7ESS73', port=5000)
