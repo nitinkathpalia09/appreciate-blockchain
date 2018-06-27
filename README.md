@@ -18,6 +18,8 @@ json: pip install json;
 
 uuid: pip install uuid(maybe present);
 
+Beautiful soup4: pip install beautifulsoup4;
+
 
 General instructions:
 
