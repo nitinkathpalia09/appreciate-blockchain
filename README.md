@@ -27,7 +27,7 @@ Clone the repository and map the path on command line to where Block/ folder is 
 
 Run python script: python blockchain.py;
 
-Open postman and register nodes: http://localhost:500x/nodes/register using POST request.
+Open register nodes tab and register nodes: http://localhost:500x/nodes/register using POST request.
 
 In json body enter: "nodes":["http://127.0.0.1:500x"]
 
